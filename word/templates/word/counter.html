@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Count</button>
+    </form>
+    <h2>Total Count: {{ total_count }}</h2>
+    <h2>Total Words: {{ total_words }}</h2>
+    <ul>
+        {% for word,count in single_word %}
+        <li><h2>{{ word }} - {{ count}} </h2></li>
+        <hr>
+        {% endfor %}
+
+    </ul>
+
+
+</body>
+</html>
